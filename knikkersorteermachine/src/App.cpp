@@ -18,10 +18,18 @@ App::~App() = default;
 bool App::setup()
 {
     // Setup the Chute module on pin 11.
+    #if defined(ESP32)
+    if (!chute.setup(27)) return false;
+    #else
     if (!chute.setup(11)) return false;
+    #endif
 
     // Setup the Feeder module on pin 9 and 10.
+    #if defined(ESP32)
+    if (!feeder.setup(12, 14)) return false;
+    #else
     if (!feeder.setup(9, 10)) return false;
+    #endif
 
     // Setup the MessageParser module.
     if (!messageParser.setup()) return false;

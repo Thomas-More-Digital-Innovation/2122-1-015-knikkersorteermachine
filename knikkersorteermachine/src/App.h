@@ -21,7 +21,6 @@ namespace KnikkerSorteerMachine
     {
     private:
         unsigned long timer{millis()};
-        uint8_t pos{0};
         Chute chute;
         Feeder feeder;
         MessageParser messageParser;

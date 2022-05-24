@@ -10,6 +10,7 @@
 #ifndef KNIKKERSORTEERMACHINE_CHUTE
 #define KNIKKERSORTEERMACHINE_CHUTE
 
+#include <Arduino.h>
 #include <Servo.h>
 
 namespace KnikkerSorteerMachine

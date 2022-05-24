@@ -7,6 +7,7 @@
  * @copyright Copyright 2022
  */
 
+#include <Arduino.h>
 #include "App.h"
 
 // Fancy C hack to let the processor force-reset.
@@ -16,7 +17,9 @@ void (* reset) (void) = 0;
 KnikkerSorteerMachine::App app;
 
 void setup() {
-  if (!app.setup()) reset();
+  if (!app.setup()) {
+    reset();
+  }
 }
 
 void loop() {
